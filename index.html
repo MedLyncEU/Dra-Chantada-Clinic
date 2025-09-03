@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clínica Dra. Cristina Chantada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #b08e8e;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+    }
+.hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+      text-align: left;
+    }
+    .hero img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      border: 4px solid #ddd;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      margin-top: 20px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .cta {
+      display: inline-block;
+      background: #b08e8e;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #b08e8e;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    footer {
+      background: #f5f5f5;
+      padding: 30px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+.carousel {
+position: relative;
+overflow: hidden;
+width: 100%;
+max-width: 800px;
+margin: 40px auto;
+background: #f9f9f9;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.carousel-track {
+display: flex;
+animation: scrollTestimonials 80s linear infinite;
+}
+.testimonial {
+flex: 0 0 100%;
+padding: 0 20px;
+box-sizing: border-box;
+text-align: center;
+}
+.testimonial em {
+font-style: italic;
+font-size: 18px;
+}
+@keyframes scrollTestimonials {
+0% { transform: translateX(0); }
+6.66% { transform: translateX(-100%); }
+13.33% { transform: translateX(-200%); }
+20% { transform: translateX(-300%); }
+26.66% { transform: translateX(-400%); }
+33.33% { transform: translateX(-500%); }
+40% { transform: translateX(-600%); }
+46.66% { transform: translateX(-700%); }
+53.33% { transform: translateX(-800%); }
+60% { transform: translateX(-900%); }
+66.66% { transform: translateX(-1000%); }
+73.33% { transform: translateX(-1100%); }
+80% { transform: translateX(-1200%); }
+86.66% { transform: translateX(-1300%); }
+93.33% { transform: translateX(-1400%); }
+100% { transform: translateX(-1500%); }
+}
+  </style>
+  <script>
+    function toggleLanguage(lang) {
+      const es = document.querySelectorAll('.es');
+      const en = document.querySelectorAll('.en');
+      es.forEach(e => e.style.display = lang === 'es' ? 'block' : 'none');
+      en.forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+    }
+  </script>
+
+<script>
+function toggleLanguage(lang) {
+const es = document.querySelectorAll('.es');
+const en = document.querySelectorAll('.en');
+es.forEach(e => e.style.display = lang === 'es' ? 'block' : 'none');
+en.forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+}
+</script>
+
+</head>
+<body onload="toggleLanguage('es')">
+  <header>
+    <nav>
+      <div class="logo">Dra. Chantada</div>
+      <ul>
+        <li><a href="#servicios">Tratamientos</a></li>
+        <li><a href="#nosotras">Nosotras</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#reserva" class="cta">Reservar</a></li>
+        <li class="lang-toggle">
+          <button onclick="toggleLanguage('es')">ES</button>
+          <button onclick="toggleLanguage('en')">EN</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <img src="DRA-CRISTINA-CHANTADA-801x1024.jpeg" alt="Dra. Cristina Chantada" />
+    <div class="hero-text">
+     <div class="es">
+      <h1>Clínica Dra. Cristina Chantada</h1>
+       <p>Medicina estética de alta calidad en Marbella</p>
+        <a href="#reserva" class="cta">Reserva tu cita</a>
+       </div>
+<div class="en">
+<h1>Dr. Cristina Chantada Clinic</h1>
+<p>High-quality aesthetic medicine in Marbella</p>
+<a href="#reserva" class="cta">Book your appointment</a>
+</div>
+</div>
+</div>
+<section id="servicios">
+  <div class="es">
+    <h2>Tratamientos Destacados</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Relleno de Labios</h3>
+        <p>Natural, elegante y personalizado.</p>
+      </div>
+      <div class="card">
+        <h3>Neuro-moduladores</h3>
+        <p>Reducción de arrugas sin perder expresión.</p>
+      </div>
+      <div class="card">
+        <h3>Blefaroplastia sin cirugía</h3>
+        <p>Rejuvenecimiento de la mirada.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="en">
+    <h2>Featured Treatments</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Lip Filler</h3>
+        <p>Natural, elegant, and customized.</p>
+      </div>
+      <div class="card">
+        <h3>Neuromodulators</h3>
+        <p>Wrinkle reduction without losing expression.</p>
+      </div>
+      <div class="card">
+        <h3>Non-surgical Blepharoplasty</h3>
+        <p>Eye rejuvenation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <section id="nosotras">
+  <div class="es">
+    <h2>Sobre la Clínica</h2>
+    <p>
+      La Dra. Cristina Chantada lidera una clínica de medicina estética reconocida por su enfoque profesional, humano y discreto. Nos especializamos en armonizar rasgos con resultados elegantes, seguros y duraderos.
+    </p>
+  </div>
+  <div class="en">
+    <h2>About the Clinic</h2>
+    <p>
+      Dr. Cristina Chantada leads an aesthetic medicine clinic known for its professional, human, and discreet approach. We specialize in harmonizing facial features with elegant, safe, and long-lasting results.
+    </p>
+  </div>
+</section>
+
+<section id="testimonios">
+<div class="es">
+<h2>Testimonios</h2>
+<div class="carousel">
+<div class="carousel-track">
+<div class="testimonial"><em>“Excelente trato y resultados impecables. Volveré sin duda.” – Laura M.</em></div>
+<div class="testimonial"><em>“Atención personalizada y naturalidad en los tratamientos. 100% recomendada.” – Marta G.</em></div>
+<div class="testimonial"><em>“Profesionalidad y cercanía. Me sentí muy cómoda desde el primer momento.” – Ana R.</em></div>
+<div class="testimonial"><em>“Resultados naturales, exactamente lo que buscaba.” – Carmen V.</em></div>
+<div class="testimonial"><em>“Trato muy humano y resultados visibles. ¡Gracias, doctora!” – Silvia F.</em></div>
+<div class="testimonial"><em>“Confianza absoluta. La mejor clínica de Marbella.” – Nuria T.</em></div>
+<div class="testimonial"><em>“Me asesoraron sin prisas y con mucha honestidad. Resultado excelente.” – Beatriz L.</em></div>
+<div class="testimonial"><em>“Ambiente profesional y discreto. 100% recomendable.” – Paula C.</em></div>
+<div class="testimonial"><em>“La Dra. Chantada tiene manos mágicas. Estoy encantada.” – Rocío G.</em></div>
+<div class="testimonial"><em>“Trato personalizado, instalaciones impecables. Volveré.” – Teresa J.</em></div>
+<div class="testimonial"><em>“Desde la primera consulta sentí que estaba en buenas manos.” – Elena S.</em></div>
+<div class="testimonial"><em>“Los tratamientos son efectivos y naturales. Muy satisfecha.” – Clara N.</em></div>
+<div class="testimonial"><em>“Explicación clara y sin presión. Trato excepcional.” – Isabel D.</em></div>
+<div class="testimonial"><em>“Me encanta la profesionalidad del equipo. Todo muy natural.” – Julia K.</em></div>
+<div class="testimonial"><em>“Resultados sutiles pero notables. Justo lo que quería.” – Andrea B.</em></div>
+</div>
+</div>
+</div>
+
+
+<div class="en">
+<h2>Testimonials</h2>
+<div class="carousel">
+<div class="carousel-track">
+<div class="testimonial"><em>“Excellent care and flawless results. I’ll definitely come back.” – Laura M.</em></div>
+<div class="testimonial"><em>“Personalized attention and natural results. 100% recommended.” – Marta G.</em></div>
+<div class="testimonial"><em>“Professional and warm. I felt very comfortable from the start.” – Ana R.</em></div>
+<div class="testimonial"><em>“Natural results, exactly what I was looking for.” – Carmen V.</em></div>
+<div class="testimonial"><em>“Very caring approach and visible results. Thank you, doctor!” – Silvia F.</em></div>
+<div class="testimonial"><em>“Total trust. The best clinic in Marbella.” – Nuria T.</em></div>
+<div class="testimonial"><em>“They advised me with honesty and no rush. Excellent result.” – Beatriz L.</em></div>
+<div class="testimonial"><em>“Professional and discreet environment. Highly recommend.” – Paula C.</em></div>
+<div class="testimonial"><em>“Dr. Chantada has magic hands. I’m thrilled.” – Rocío G.</em></div>
+<div class="testimonial"><em>“Personalized service and spotless facilities. Will return.” – Teresa J.</em></div>
+<div class="testimonial"><em>“Felt in good hands from the first consultation.” – Elena S.</em></div>
+<div class="testimonial"><em>“The treatments are effective and natural. Very satisfied.” – Clara N.</em></div>
+<div class="testimonial"><em>“Clear explanations and no pressure. Outstanding service.” – Isabel D.</em></div>
+<div class="testimonial"><em>“Love the professionalism of the team. Everything looks natural.” – Julia K.</em></div>
+<div class="testimonial"><em>“Subtle yet noticeable results. Just what I wanted.” – Andrea B.</em></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reserva">
+  <div class="es">
+    <h2>Reserva tu Cita</h2>
+    <p>Gestionamos reservas por WhatsApp para garantizar una respuesta inmediata.</p>
+    <a href="https://wa.me/34XXXXXXXXX" class="whatsapp-btn">Reservar por WhatsApp</a>
+    <p>Para confirmar tu cita, se requiere un depósito de 60€. Política de cancelación aplica.</p>
+  </div>
+
+  <div class="en">
+    <h2>Book Your Appointment</h2>
+    <p>We handle bookings through WhatsApp to ensure an immediate response.</p>
+    <a href="https://wa.me/34XXXXXXXXX" class="whatsapp-btn">Book via WhatsApp</a>
+    <p>A 60€ deposit is required to confirm your appointment. Cancellation policy applies.</p>
+  </div>
+</section>
+
+<section class="section" id="ubicacion">
+  <div class="es">
+    <h2>Ubicación y Horarios</h2>
+    <div class="location">
+      <p><strong>Dirección:</strong> Edificio Romero de Torres, Urbanización Magna, Av. Calderón de la Barca, 1ª planta, Marbella</p>
+    </div>
+    <div class="schedule">
+      <p><strong>Horario:</strong> Lunes a Jueves 10:00–14:00 / 16:00–19:00, Viernes 10:00–14:00 / 15:00–18:00</p>
+    </div>
+  </div>
+
+  <div class="en">
+    <h2>Location & Hours</h2>
+    <div class="location">
+      <p><strong>Address:</strong> Romero de Torres Building, Urbanización Magna, Av. Calderón de la Barca, 1st floor, Marbella</p>
+    </div>
+    <div class="schedule">
+      <p><strong>Hours:</strong> Monday to Thursday 10:00–14:00 / 16:00–19:00, Friday 10:00–14:00 / 15:00–18:00</p>
+    </div>
+  </div>
+
+  <iframe loading="lazy"
+    src="https://maps.google.com/maps?q=Dr%20Chantada%20Clinic%20-%20Clinica%20Est%C3%A9tica%20Marbella&#038;t=m&#038;z=13&#038;output=embed&#038;iwloc=near"
+    title="Dr Chantada Clinic - Clinica Estética Marbella"
+    aria-label="Dr Chantada Clinic - Clinica Estética Marbella"
+    width="100%"
+    height="300"
+    style="border:0; border-radius: 10px; margin-top: 20px;"
+    allowfullscreen>
+  </iframe>
+</section>
+
+<section class="section" id="Como Llegar">
+  <div class="es">
+    <h2>Cómo Llegar</h2>
+    <div class="video-section">
+      <video controls width="100%" style="max-width: 600px; border-radius: 10px;">
+        <source src="Como llegar.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </div>
+
+  <div class="en">
+    <h2>How to Get Here</h2>
+    <div class="video-section">
+      <video controls width="100%" style="max-width: 600px; border-radius: 10px;">
+        <source src="Como llegar.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section id="contacto">
+  <div class="es">
+    <h2>Contacto</h2>
+    <p>Email: <a href="mailto:info@clinicachantada.com">info@clinicachantada.com</a></p>
+    <p>Ubicación: Marbella, España</p>
+    <p><a href="https://www.instagram.com/dr.cristinachantada" target="_blank">Instagram</a></p>
+  </div>
+  
+  <div class="en">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:info@clinicachantada.com">info@clinicachantada.com</a></p>
+    <p>Location: Marbella, Spain</p>
+    <p><a href="https://www.instagram.com/dr.cristinachantada" target="_blank">Instagram</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="es">
+    <p>&copy; 2025 Clínica Dra. Chantada. Todos los derechos reservados.</p>
+  </div>
+  <div class="en">
+    <p>&copy; 2025 Dr. Chantada Clinic. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
